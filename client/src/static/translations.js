@@ -65,6 +65,7 @@ export const TRANSLATIONS = {
     },
     FOOTER: {
       GITHUB_ADDRESS: 'https://github.com/javiertrujilloserrano',
+      GITHUB_ADDRESS_LINK: 'https://github.com/javiertrujilloserrano/Portafolio',
       LINKEDIN_ADDRESS: 'https://www.linkedin.com/',
       ABOUT_ME: 'Sobre mí',
       CONTACT: 'Contacto',
@@ -143,6 +144,7 @@ export const TRANSLATIONS = {
     },
     FOOTER: {
       GITHUB_ADDRESS: 'https://github.com/javiertrujilloserrano',
+      GITHUB_ADDRESS_LINK: 'https://github.com/javiertrujilloserrano/Portafolio',
       LINKEDIN_ADDRESS: 'https://www.linkedin.com/',
       ABOUT_ME: 'About Me',
       CONTACT: 'Contact',
