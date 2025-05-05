@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/index.html"
+    },
+    {
+      "src": "/cv",
+      "dest": "/server/public/CV.pdf"
+    },
+    {
+      "src": "/contact",
+      "dest": "/server/routers/nodemailer-routes.js"
+    }
+  ],
+  "env": {
+    "EMAIL": "@vercel/env/EMAIL",
+    "PASSWORD": "@vercel/env/PASSWORD",
+    "USER": "@vercel/env/USER",
+    "MESSAGE_SP": "@vercel/env/MESSAGE_SP",
+    "MESSAGE_EN": "@vercel/env/MESSAGE_EN"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}

@@ -38,7 +38,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="http://localhost:4000/cv"
+                  href="/cv"
                   download="javierTrujilloCV.pdf"
                   className="text-decoration-none text-dark">
                   {TRANSLATIONS[lang].FOOTER.CV}
