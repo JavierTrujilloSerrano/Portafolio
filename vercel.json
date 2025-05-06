@@ -19,7 +19,10 @@
   "routes": [
     {
       "src": "/cv.pdf",
-      "dest": "/server/public/CV.pdf"
+      "dest": "/server/public/cv.pdf",
+      "headers": {
+        "Content-Type": "application/pdf"
+      }
     },
     {
       "src": "/(.*)",
@@ -27,11 +30,11 @@
     }
   ],
   "env": {
-    "EMAIL": "vercel/env/EMAIL",
-    "PASSWORD": "vercel/env/PASSWORD",
-    "USER": "vercel/env/USER",
-    "MESSAGE_SP": "vercel/env/MESSAGE_SP",
-    "MESSAGE_EN": "vercel/env/MESSAGE_EN"
+    "EMAIL": "@vercel/env/EMAIL",
+    "PASSWORD": "@vercel/env/PASSWORD",
+    "USER": "@vercel/env/USER",
+    "MESSAGE_SP": "@vercel/env/MESSAGE_SP",
+    "MESSAGE_EN": "@vercel/env/MESSAGE_EN"
   },
   "build": {
     "env": {
