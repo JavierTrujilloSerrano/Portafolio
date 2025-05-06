@@ -12,7 +12,9 @@
       "src": "server/package.json",
       "use": "@vercel/node",
       "config": {
-        "include": ["server/**/*"]
+        "include": ["server/**/*"],
+        "public": ["server/public"],
+        "api": ["server/src/routers"]
       }
     }
   ],
