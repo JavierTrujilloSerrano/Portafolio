@@ -12,15 +12,13 @@
       "src": "server/package.json",
       "use": "@vercel/node",
       "config": {
-        "include": ["server/**/*"],
-        "public": ["server/public"],
-        "api": ["server/src/routers"]
+        "distDir": "server/public"
       }
     }
   ],
   "routes": [
     {
-      "src": "/cv.pdf",
+      "src": "/cv",
       "dest": "/server/public/cv.pdf"
     },
     {
