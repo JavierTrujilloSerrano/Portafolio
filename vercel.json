@@ -3,14 +3,14 @@
   "builds": [
     {
       "src": "client/package.json",
-      "use": "@vercel/static-build",
+      "use": "vercel/static-build",
       "config": {
         "distDir": "dist"
       }
     },
     {
       "src": "server/package.json",
-      "use": "@vercel/node",
+      "use": "vercel/node",
       "config": {
         "include": ["server/**/*"]
       }
@@ -30,11 +30,11 @@
     }
   ],
   "env": {
-    "EMAIL": "@vercel/env/EMAIL",
-    "PASSWORD": "@vercel/env/PASSWORD",
-    "USER": "@vercel/env/USER",
-    "MESSAGE_SP": "@vercel/env/MESSAGE_SP",
-    "MESSAGE_EN": "@vercel/env/MESSAGE_EN"
+    "EMAIL": "vercel/env/EMAIL",
+    "PASSWORD": "vercel/env/PASSWORD",
+    "USER": "vercel/env/USER",
+    "MESSAGE_SP": "vercel/env/MESSAGE_SP",
+    "MESSAGE_EN": "vercel/env/MESSAGE_EN"
   },
   "build": {
     "env": {
