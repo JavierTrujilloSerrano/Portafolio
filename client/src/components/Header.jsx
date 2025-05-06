@@ -1,5 +1,5 @@
 import { useLanguage } from '../hooks/LanguageContext';
-import { useNameEffect } from '../Hooks/NameEffect';
+import { useNameEffect } from '../hooks/NameEffect';
 import { TRANSLATIONS } from '../static/translations';
 import LanguageSwitch from '../hooks/LanguageSwitch';
 import NameGif from '../assets/name-g.gif';
