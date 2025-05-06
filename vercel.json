@@ -18,7 +18,7 @@
   ],
   "routes": [
     {
-      "src": "/CV.pdf",
+      "src": "/cv.pdf",
       "dest": "/server/public/CV.pdf"
     },
     {
