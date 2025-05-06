@@ -23,7 +23,7 @@
     },
     {
       "src": "/contact",
-      "dest": "/server/src/routers/nodemailer-routes.js"
+      "dest": "/server/src/routers/nodemailer-routes.mjs"
     },
     {
       "src": "/(.*)",

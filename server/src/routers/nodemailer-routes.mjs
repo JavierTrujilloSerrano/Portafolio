@@ -1,5 +1,5 @@
 import { Router } from "express";
-import transporter from "../../config/nodemailer.js";
+import transporter from "../../config/nodemailer.mjs";
 
 export const nodemailer = Router();
 

@@ -1,4 +1,4 @@
-import { server, PORT } from "./server.js";
+import { server, PORT } from "./server.mjs";
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
