@@ -19,10 +19,11 @@
   "routes": [
     {
       "src": "/cv.pdf",
-      "dest": "/server/public/cv.pdf",
-      "headers": {
-        "Content-Type": "application/pdf"
-      }
+      "dest": "/server/public/cv.pdf"
+    },
+    {
+      "src": "/contact",
+      "dest": "/server/src/routers/nodemailer-routes.js"
     },
     {
       "src": "/(.*)",
