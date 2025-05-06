@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "install": "pnpm install --no-frozen-lockfile",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage"
