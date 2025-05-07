@@ -18,16 +18,22 @@
   ],
   "routes": [
     {
-      "src": "/cv",
+      "src": "/cv.pdf",
       "dest": "/server/public/cv.pdf"
     },
     {
       "src": "/contact",
-      "dest": "/server/src/routers/nodemailer-routes.mjs"
+      "dest": "server/src/routers/nodemailer-routes.mjs"
     },
     {
       "src": "/(.*)",
       "dest": "/client/$1"
+    }
+  ],
+  "functions": [
+    {
+      "src": "server/src/routers/nodemailer-routes.mjs",
+      "name": "sendEmail"
     }
   ],
   "env": {
