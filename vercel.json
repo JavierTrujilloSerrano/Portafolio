@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "functions": [
-    {
-      "src": "server/src/routers/nodemailer-routes.mjs",
-      "name": "sendEmail"
-    }
-  ],
   "builds": [
     {
       "src": "client/package.json",
