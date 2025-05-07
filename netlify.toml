@@ -1,0 +1,20 @@
+[
+  build
+  ]
+    command = "cd server && npm install && npm start"
+    publish = "client/dist"  
+    functions = "server"      
+  
+  [[
+  redirects
+  ]]
+    from = "/cv"
+    to = "/.netlify/functions/server/public/CV.pdf"
+    status = 200
+  
+  [[
+  redirects
+  ]]
+    from = "/contact"
+    to = "/.netlify/functions/server/contact"
+    status = 200
