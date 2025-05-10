@@ -11,8 +11,6 @@ export default function downloadCV(req, res) {
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
       return res.status(404).send("File not found");
-      console.log("Intentando enviar:", filePath);
-
     }
     res.setHeader(
       "Content-Disposition",

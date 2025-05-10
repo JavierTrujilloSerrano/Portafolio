@@ -38,7 +38,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`${import.meta.env.VITE_BACKEND_URL}/cv`}
+                  href={`${import.meta.env.VITE_BACKEND_URL}/cv.pdf`}
                   download="javierTrujilloCV.pdf"
                   className="text-decoration-none text-dark">
                   {TRANSLATIONS[lang].FOOTER.CV}
