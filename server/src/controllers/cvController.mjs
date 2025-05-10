@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 export default function downloadCV(req, res) {
   try {
-    const filePath = path.join(__dirname, '../../public', 'cv.pdf');
+    const filePath = path.join(__dirname, '../public', 'cv.pdf');
 
     fs.stat(filePath, (err, stats) => {
       if (err) {

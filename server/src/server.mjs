@@ -16,9 +16,6 @@ server.use((req, res, next) => {
   );
   next();
 });
-
-server.get("/", (req, res) => {
-  res.send("Servidor backend activo");
-});
+server.get("/", (req, res) => {res.send("Servidor backend online")});
 server.use("/contact", nodemailer);
 server.get("/cv", downloadCV);
