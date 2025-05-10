@@ -7,10 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default function downloadCV(req, res) {
-  const filePath = path.join(__dirname, "../public", "cv.pdf");
+  const filePath = path.join(__dirname, "../../public", "cv.pdf");
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      return res.status(404).send("Archivo no encontrado");
+      return res.status(404).send("File not found");
+      console.log("Intentando enviar:", filePath);
+
     }
     res.setHeader(
       "Content-Disposition",
