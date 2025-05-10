@@ -44,10 +44,7 @@ export default function ContactSection() {
 
   const onSubmit = async (formData) => {
     try {
-      const response = await axios.post(
-        'http://localhost:4000/contact',
-        formData,
-      );
+      const response = await axios.post(`${API_URL}/contact`, formData);
 
       if (response.data.success) {
         setSuccessMessage(TRANSLATIONS[lang].FORM.FORM_SUCCESS);
@@ -190,9 +187,7 @@ export default function ContactSection() {
                     required
                   />
                   {TRANSLATIONS[lang].FORM.PRIVACY_POLICY}
-                  <a
-                    onClick={handleTextClick}
-                    className="ms-1">
+                  <a onClick={handleTextClick} className="ms-1">
                     {TRANSLATIONS[lang].FORM.PRIVACY_POLICY_LINK}
                   </a>
                 </label>
@@ -205,13 +200,18 @@ export default function ContactSection() {
                       <div
                         dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
                       />
-                      <button className="btn btn-primary" onClick={handleClosePopup}>
+                      <button
+                        className="btn btn-primary"
+                        onClick={handleClosePopup}>
                         {TRANSLATIONS[lang].FORM.CLOSE}
                       </button>
                     </div>
                   </div>
                 )}
-                <button type="submit" className="btn btn-primary" disabled={!isChecked}>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  disabled={!isChecked}>
                   <span>
                     <ChevronLeft />
                   </span>
