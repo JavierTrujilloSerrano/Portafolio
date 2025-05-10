@@ -22,7 +22,7 @@ export default function downloadCV(req, res) {
 
       console.log("File exists. Starting download...");
 
-      res.setHeader("Content-Disposition", 'attachment; filename="cv.pdf"');
+      res.setHeader("Content-Disposition", 'attachment; filename="javierTrujilloCV.pdf"');
       res.setHeader("Content-Type", "application/pdf");
 
       res.sendFile(filePath);
