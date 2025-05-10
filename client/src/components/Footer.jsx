@@ -38,7 +38,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`https://portafolio-server-kxrp.onrender.com/cv.pdf`}
+                  href={`https://portafolio-server-kxrp.onrender.com/CurriculumVitae.pdf`}
                   download="javierTrujilloCV.pdf"
                   className="text-decoration-none text-dark">
                   {TRANSLATIONS[lang].FOOTER.CV}
