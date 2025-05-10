@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { nodemailer } from "./routers/nodemailer-routes.mjs";
 import downloadCV from "./controllers/cvController.mjs";
+import path from "path";
 
 export const PORT = process.env.PORT || 4000;
 export const server = express();
@@ -16,6 +17,8 @@ server.use((req, res, next) => {
   );
   next();
 });
+server.use(express.static(path.join(__dirname, "public")));
+
 server.get("/", (req, res) => {res.send("Servidor backend online")});
 server.use("/contact", nodemailer);
 server.get("/cv", downloadCV);
