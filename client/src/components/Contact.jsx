@@ -45,7 +45,7 @@ export default function ContactSection() {
   const onSubmit = async (formData) => {
     try {
       const response = await axios.post(
-        'http://localhost:4000/contact',
+        'https://portafolio-server-kxrp.onrender.com/contact',
         formData,
       );
 
@@ -110,7 +110,7 @@ export default function ContactSection() {
           className={`collapsing card-contact ${isVisible ? 'show' : ''}`}
           id="collapseForm">
           <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="row p-3">
+            <form method="post" onSubmit={handleSubmit(onSubmit)} className="row p-3">
               <div className="col-md-6 mt-3">
                 <label className="form-label" htmlFor="email">
                   <input

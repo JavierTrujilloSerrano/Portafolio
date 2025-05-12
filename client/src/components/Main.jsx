@@ -1,6 +1,6 @@
 import { TRANSLATIONS } from '../static/translations';
 import { useLanguage } from '../hooks/LanguageContext';
-import Dev from '../assets/foto.jpg';
+import Dev from '../assets/foto.webp';
 import * as Icons from './Icons/Icons.jsx';
 import ContactSection from './Contact.jsx';
 

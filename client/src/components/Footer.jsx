@@ -5,6 +5,7 @@ import { GithubIcons, LinkedinIcon } from '../components/Icons/Icons';
 export default function Footer() {
   const { lang } = useLanguage();
   const year = new Date().getFullYear();
+  const BASE_URL = 'https://portafolio-server-kxrp.onrender.com';
 
   return (
     <footer className="mt-5 footer">
@@ -29,13 +30,17 @@ export default function Footer() {
             <h5>{TRANSLATIONS[lang].FOOTER.DISCOVER_MORE}</h5>
             <ul className="list-unstyled m-0">
               <li>
-                <a className="text-decoration-none text-dark">
+                <a
+                  className="text-decoration-none text-dark"
+                  href={TRANSLATIONS[lang].FOOTER.GITHUB_ADDRESS_LINK}
+                  target="_blank">
                   {TRANSLATIONS[lang].FOOTER.REPOSITORY}
                 </a>
               </li>
               <li>
                 <a
-                  href="./cv"
+                  href={`${BASE_URL}/cv`}
+                  target="_blank"
                   download="javierTrujilloCV.pdf"
                   className="text-decoration-none text-dark">
                   {TRANSLATIONS[lang].FOOTER.CV}
@@ -47,7 +52,7 @@ export default function Footer() {
             <h5>{TRANSLATIONS[lang].FOOTER.CONTACT}</h5>
             <a
               href={TRANSLATIONS[lang].FOOTER.GITHUB_ADDRESS}
-              target="https://github.com/JavierTrujilloSerrano"
+              target="_blank"
               className="text-decoration-none text-dark pe-3">
               <GithubIcons width={40} height={40} />
             </a>

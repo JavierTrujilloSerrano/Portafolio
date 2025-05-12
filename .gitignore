@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 *.env
+pnpm-lock.yaml
+.vercel
+
+# Local Netlify folder
+.netlify
