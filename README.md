@@ -4,85 +4,79 @@
 
 ### Resumen del proyecto
 
-Este proyecto es una página personal creada con varias "cards" donde puedes mostrar información relevante sobre ti mismo.
+El proyecto es una página personal que está creada con varias "card" donde puedes poner datos importantes sobre uno mismo.
 
 ### Propósito
 
-El objetivo es ofrecer una plantilla personalizable que puedas descargar y modificar según tus necesidades. Su función principal es ayudarte a exponer tu información y darte a conocer, aunque también puede adaptarse a otros propósitos.
+El propósito es crear una plantilla para poder descargarla y realizar las modificaciones que a uno le interesen. Su principal propósito es exponer tu información y darte a conocer, aunque no quita que se pueda usar para diferentes propósitos.
 
 ### Público objetivo y beneficios
 
-Esta plantilla facilita la creación de un portafolio personal, incluyendo funcionalidades que benefician al usuario como:
-
-- Cambio de idioma (translations).
-- Servicio de mensajería con Nodemailer (Gmail).
-- Personalización de SVGs mediante props.
-- Posibilidad de descargar el archivo CV en PDF.
-
----
+El objetivo es facilitar la creación de un portafolio personal a través de esta plantilla. También dispones de otras funcionalidades que benefician al usuario como la función de cambio de idioma, servicio de mensajería con Nodemailer (Gmail), posibilidad de personalización de SVG con props y posibilidad de descarga de archivo CV.
 
 ### Herramientas utilizadas
 
-Este proyecto utiliza:
+Usamos en el proyecto React + Vite, Bootstrap, Axios, Zod, CORS, Dotenv, Nodemailer, Express y Vitest.
 
-- **Frontend:** React + Vite, Bootstrap, Axios, Zod
-- **Backend:** Express, Cors, Dotenv, Nodemailer
-- **Testing:** Vitest
-
----
-
-### Modificaciones destacadas
+### Modificaciones
 
 #### Recursos Multimedia
 
-Ubicados en `cliente/src/assets`. Aquí puedes añadir tu foto de perfil, favicon y el GIF del nombre (opcional).
+En la carpeta `cliente/src/assets` se encuentran los recursos multimedia, como la foto de perfil, el favicon y el GIF del nombre. Este efecto se puede realizar con código o mediante un GIF.
 
 #### Validaciones del Formulario
 
-Se han implementado validaciones con **Zod** en `cliente/src/utils`.
+En la carpeta `cliente/src/utils` se han implementado las validaciones para el formulario utilizando Zod.
 
 #### Configuración del Servidor
 
-En la carpeta `servidor` se incluye un archivo `.env.example` que puedes completar con tus datos. Esto configura:
+En la carpeta `servidor` se ha incluido un archivo `.env.example` de ejemplo para configurar el correo electrónico de envío a la persona que nos contacte y una copia para nosotros.
 
-- Tu correo para recibir mensajes.
-- Los mensajes automáticos de respuesta en español (`MESSAGE_SP`) e inglés (`MESSAGE_EN`).
+#### Descarga del Currículum
 
-Ejemplo de `MESSAGE_SP` (HTML):
+En la carpeta `servidor/public` debe colocarse el archivo PDF con el currículum para que se pueda descargar.
+
+#### Tratamiento de Datos (Política de Privacidad)
+
+Al estar en la Unión Europea, es necesario cumplir con la normativa de tratamiento de datos. Se ha creado un hook para mostrar un popup con el texto de la legislación. Este texto se puede modificar en la sección `static/translations`. Puedes personalizarlo para incluir tus datos.
+
+### Personalización del Proyecto
+
+- Puedes estilizar el proyecto como desees.
+- En `servidor/.env.example` puedes añadir:
+  - `MESSAGE_SP`: Mensaje HTML en español.
+  - `MESSAGE_EN`: Mensaje HTML en inglés.
+
+Ejemplo:
 
 ```html
 <h3>¡Muchas gracias por contactarme!</h3>
 <p>Agradezco tu interés.</p>
 <p>Tengo experiencia en el desarrollo web.</p>
-<p>Si deseas conversar, responde a este mensaje.</p>
+<p>Si deseas conversar responde este mensaje.</p>
 <h3>¡Hasta la próxima!</h3>
 ```
 
-> Estos mensajes se usan en `nodemailer.mjs` y `nodemailer-router.mjs`.
+- En la carpeta `cliente/static`, puedes editar los textos de la web. Usa `translationExample.js` como ejemplo, luego elimínalo y renombra el nuevo archivo para que tenga efecto.
+- En `client/index.html` puedes personalizar el título del sitio editando la etiqueta `<title>`.
 
-#### Traducciones y textos de la web
+### Configuración Básica para Nodemailer
 
-En `cliente/static`, puedes personalizar los textos de la web. Hay un archivo de ejemplo llamado `translationExample.js`. Modifícalo y renómbralo como `translation.js` para que tenga efecto.
+Si solo deseas enviar correos electrónicos desde tu cuenta de Gmail utilizando Nodemailer, puedes seguir estos pasos básicos:
 
-#### Descarga del Currículum
+#### Habilitar la Autenticación de Dos Factores (2FA)
 
-Debes colocar tu archivo PDF en `servidor/public` para que esté disponible desde el frontend.
+1. Ve a tu cuenta de Google: [https://myaccount.google.com](https://myaccount.google.com)
+2. En el menú de la izquierda, selecciona **Seguridad**.
+3. Busca **Autenticación de dos pasos** y haz clic en **Activar**.
 
-#### Política de Privacidad (RGPD)
+#### Generar una Contraseña de Aplicación
 
-Se incluye un hook para mostrar un popup con la política de privacidad, necesario si estás en la Unión Europea. El texto está en `static/translations` y es totalmente editable.
-
----
-
-### Personalización visual
-
-Para estilar el portafolio a tu gusto, sigue estos pasos:
-
-- Añade tus archivos multimedia en `cliente/src/assets`.
-- Cambia el título de la pestaña en `cliente/index.html`, modificando la etiqueta `<title>` con el nombre de tu portafolio.
-- Personaliza los mensajes de respuesta y las traducciones como se explicó más arriba.
-
----
+1. Una vez habilitada la 2FA, vuelve a la sección de **Seguridad**.
+2. Busca **Contraseñas de aplicaciones**.
+3. Selecciona "Mail" como aplicación y "Otros (Nombre personalizado)" como dispositivo.
+4. Escribe un nombre como "Nodemailer" y haz clic en **Generar**.
+5. Copia la contraseña generada y guárdala de manera segura.
 
 ### Licencia
 

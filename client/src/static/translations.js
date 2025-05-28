@@ -12,9 +12,9 @@ export const TRANSLATIONS = {
     },
     MAIN: {
       ABOUT_ME: 'Sobre mí',
-      ABOUT_ME_TEXT: `Me llamo Javier Trujillo, soy desarrollador web y un apasionado por la tecnología y la creación de experiencias digitales.
+      ABOUT_ME_TEXT: `Me llamo Javier Trujillo, soy desarrollador web y un apasionado por la tecnología y la creación de experiencias digitales. 
       Me gusta transformar ideas en productos funcionales, optimizados y bien estructurados. 
-      Siempre estoy buscando mejorar mis habilidades, aprender nuevas herramientas y escribir código limpio y eficiente.
+      Siempre estoy buscando mejorar mis habilidades, aprender nuevas herramientas y escribir código limpio y eficiente. 
       Me enfoco en el rendimiento, la accesibilidad y la experiencia de usuario. Me gusta trabajar en equipo, 
       resolver problemas y enfrentar nuevos desafíos que me ayuden a crecer como profesional`,
       BACKEND: 'Back-End',
@@ -94,9 +94,10 @@ export const TRANSLATIONS = {
     MAIN: {
       ABOUT_ME: 'About Me',
       ABOUT_ME_TEXT: `Hi, I'm Javier Trujillo, a web developer with a passion for technology and creating digital experiences. 
-      I enjoy bringing ideas to life as functional and efficient products. I'm always looking to enhance my skills, learn new tools, 
-      and write clean, effective code. My focus is on performance, accessibility, and user experience. I enjoy working in a team, 
-      solving problems, and facing new challenges that help me grow as a professional`,
+      I enjoy bringing ideas to life as functional and efficient products. 
+      I'm always looking to enhance my skills, learn new tools, 
+      and write clean, effective code. My focus is on performance, accessibility, and user experience. 
+      I enjoy working in a team, solving problems, and facing new challenges that help me grow as a professional`,
       BACKEND: 'Back-End',
       BACKEND_TEXT: `I have experience in backend development using PHP, SQL, and Node.js, 
       allowing me to build robust and efficient applications. 
