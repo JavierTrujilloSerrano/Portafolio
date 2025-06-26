@@ -1,5 +1,9 @@
 # PROYECTO DE PORTAFOLIO PERSONAL
 
+### Aquí puedes ver mi portafolio de ejemplo y modificarlo
+
+[Visita mi portafolio](https://portafolio-yf9x.onrender.com) (Nota: Al estar subida en Render, el servidor puede tener un arranque frío, por lo que es posible que debas esperar un momento para que se cargue el CV o se envíe el formulario)
+
 ## Creación de un portafolio en React + Vite con Node.js
 
 ### Resumen del proyecto

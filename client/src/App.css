@@ -81,11 +81,10 @@ a{
   align-items: center;
   overflow: hidden;
 }
-.image {
-  display: block;
+.profile-picture {
+  max-width: 80%;
   margin: auto;
-  max-width: 100%;
-  height: auto;
+  border-color: #009087;
 }
 .form-label {
   width: 100%;

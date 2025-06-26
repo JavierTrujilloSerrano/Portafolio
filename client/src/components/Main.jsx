@@ -10,12 +10,12 @@ export default function Main() {
   return (
     <>
       <main className="container-md">
-        <div className="card background-image-main border-black mb-3 p-5">
+        <div className="card border-black mb-3 p-5">
           <div className="row">
             <article className="col-md-3 pb-3">
-              <img src={Dev} className="img-fluid card" alt="image profile" />
+              <img src={Dev} className="card profile-picture" alt="profile picture" />
             </article>
-            <section id="about" className="col-md-9 align-items-center">
+            <section id="about" className="col-md-9 align-self-center">
               <div>
                 <h5 className="card-title text-start">
                   <span>
