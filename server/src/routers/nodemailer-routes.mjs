@@ -29,7 +29,14 @@ nodemailer.post("/", async (req, res) => {
       html: `<h5>Correo de ${name}</h5>
       <p>(${email}) dice: ${escapeHTML(message)}</p>`,
     });
-
+  } catch (error) {
+    console.log("Error sending email admin:", error);
+    res.status(500).json({ message: error.message });
+    return res
+      .status(500)
+      .json({ message: "Error sending email to admin: " + error.message });
+  }
+  try {
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: email,
@@ -59,7 +66,7 @@ nodemailer.post("/", async (req, res) => {
                 </blockquote>
               </main>
             </html>`,
-            
+
       text: `¡Hola ${capitalize(name)}!
               ${process.env.MESSAGE_SP}
                   
@@ -84,7 +91,11 @@ nodemailer.post("/", async (req, res) => {
 
     res.json({ success: true, message: "Email sent successfully" });
   } catch (error) {
-    console.log("Error sending email:", error);
-    res.status(500).json({ message: "Error sending email" });
+    console.log("Error sending email user:", error);
+    res.status(500).json({ message: error.message });
+    return res
+      .status(500)
+      .json({ message: "Error sending email to user: " + error.message });
   }
+  res.json({ success: true, message: "Emails sent successfully" });
 });
