@@ -46,7 +46,7 @@ export default function ContactSection() {
     try {
       const response = await axios.post(
         'https://portafolio-server-kxrp.onrender.com/contact',
-        formData,
+        formData
       );
 
       if (response.data.success) {
