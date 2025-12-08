@@ -5,11 +5,14 @@ import { nodemailer } from "./routers/nodemailer-routes.mjs";
 export const PORT = process.env.PORT || 4000;
 export const server = express();
 
-server.use(cors({
-  origin: "https://portafolio-yf9x.onrender.com", 
-  methods: ["GET", "POST"],
-  credentials: true,
-}));
+server.use(
+  cors({
+    origin: "https://portafolio-yf9x.onrender.com",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
+
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
