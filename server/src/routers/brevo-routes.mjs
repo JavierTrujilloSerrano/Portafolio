@@ -1,48 +1,40 @@
 import { Router } from "express";
-import transporter from "../../config/nodemailer.mjs";
+import brevo from "../../config/brevo.mjs";
 
-export const nodemailer = Router();
+export const brevoRouter = Router();
 
-nodemailer.post("/", async (req, res) => {
+brevoRouter.post("/", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    res.status(400).json({ message: "Insufficient Information" });
+    return;
+  }
+  const escapeHTML = (str) =>
+    str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
   try {
-    const { name, email, message } = req.body;
-
-    if (!name || !email || !message) {
-      res.status(400).json({ message: "Insufficient Information" });
-      return;
-    }
-    const escapeHTML = (str) =>
-      str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
-    await transporter.sendMail({
-      from: `"${capitalize(name)}" <${email}>`,
-      to: process.env.EMAIL,
-      replyTo: email,
+    await brevo.sendTransacEmail({
+      sender: { name: process.env.USER, email: process.env.BREVO_EMAIL },
+      to: [{ email: process.env.EMAIL }],
+      replyTo: { email },
       subject: `Contacto desde portafolio: ${name}`,
-      html: `<h5>Correo de ${name}</h5>
+      htmlContent: `<h5>Correo de ${name}</h5>
       <p>(${email}) dice: ${escapeHTML(message)}</p>`,
     });
-  } catch (error) {
-    console.log("Error sending email admin:", error);
-    res.status(500).json({ message: error.message });
-    return res
-      .status(500)
-      .json({ message: "Error sending email to admin: " + error.message });
-  }
-  try {
-    await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: email,
-      replyTo: process.env.EMAIL,
+
+    await brevo.sendTransacEmail({
+      sender: { name: process.env.USER, email: process.env.BREVO_EMAIL },
+      to: [{ email }],
       subject: `Formulario de contacto portafolio de ${process.env.USER} - Portfolio Contact Form of ${process.env.USER}`,
-      html: `<html>
+      htmlContent: `<html>
               <main style="max-width: 600px; margin: auto; padding: 20px; color: #333;">
                 <h1 style="color: #007bff; text-align: center; margin-bottom: 20px;">
                   &lt; ¡Hola ${capitalize(name)}! / &gt;
@@ -89,13 +81,9 @@ nodemailer.post("/", async (req, res) => {
       },
     });
 
-    res.json({ success: true, message: "Email sent successfully" });
+    res.json({ success: true, message: "Emails sent successfully" });
   } catch (error) {
-    console.log("Error sending email user:", error);
-    res.status(500).json({ message: error.message });
-    return res
-      .status(500)
-      .json({ message: "Error sending email to user: " + error.message });
+    console.error("Error sending email:", error);
+    res.status(500).json({ message: "Error sending email: " + error.message });
   }
-  res.json({ success: true, message: "Emails sent successfully" });
 });
