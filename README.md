@@ -1,5 +1,4 @@
 ## Versión en castellano
----
 
 # PROYECTO DE PORTAFOLIO PERSONAL
 
@@ -9,27 +8,20 @@
 
 > **NOTA:** Al estar subida en Render, el servidor puede tener un arranque frío, por lo que debes esperar un momento para que se cargue el CV o se envíe el formulario.
 
----
-
 ### Creación de un portafolio en React + Vite con Node.js
 
 #### Resumen del proyecto
 
 El proyecto es una **página personal** que contiene varias **cards** para mostrar información relevante sobre ti.
 
----
 
 #### Propósito
 
 El propósito es crear una plantilla para poder descargarla y realizar las modificaciones que a uno le interesen. Su principal propósito es exponer tu información y darte a conocer, aunque no quita que se pueda usar para diferentes propósitos.
 
----
-
 #### Público objetivo y beneficios
 
 El objetivo es facilitar la creación de un portafolio personal a través de esta plantilla. También dispones de otras funcionalidades que benefician al usuario, como la función de cambio de idioma, servicio de mensajería con Nodemailer (Gmail), posibilidad de personalización de SVG con props y posibilidad de descarga del archivo CV.
-
----
 
 #### Herramientas utilizadas
 
@@ -63,16 +55,12 @@ La versión anterior presentaba una vulnerabilidad crítica, reportada en **novi
 **Solución:**  
 Actualización a la **versión más reciente de React** para corregir la vulnerabilidad y garantizar seguridad.
 
----
-
 #### Modificaciones importantes en el proyecto 
 
 - **Recursos Multimedia:** En la carpeta `cliente/src/assets` se encuentran los recursos multimedia, como la foto de perfil, el favicon y el GIF del nombre. Este efecto se puede realizar con código o mediante un GIF.
 - **Validaciones del Formulario:** En la carpeta `cliente/src/utils` se han implementado las validaciones para el formulario utilizando Zod.
 - **Configuración del Servidor:** En la carpeta `servidor` se ha incluido un archivo `.env.example` de ejemplo para configurar el correo electrónico, la API de Brevo y para poder realizar el envío del correo a la persona que nos contacte, incluyendo una copia para nosotros.
 - **Descarga del Currículum:** En la carpeta `servidor/public` debe colocarse el archivo PDF con el currículum para que se pueda descargar.
-
----
 
 #### PERSONALIZACIÓN DEL PROYECTO
 
@@ -98,7 +86,6 @@ Ejemplo:
 
 Al estar en la Unión Europea, es necesario cumplir con la normativa de tratamiento de datos. Se ha creado un hook para mostrar un popup con el texto de la legislación. Este texto se puede modificar en la sección `static/translations`. Puedes personalizarlo para incluir tus datos.
 
----
 ### Licencia
 
 ![CC-BY-SA](./client/src/assets/by-sa-image.svg)
@@ -106,8 +93,10 @@ Al estar en la Unión Europea, es necesario cumplir con la normativa de tratamie
 Este trabajo está bajo una licencia [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
 
 ---
-## ENGLISH VERSION
 ---
+
+## ENGLISH VERSION
+
 # PERSONAL PORTFOLIO PROJECT
 
 ## Here you can see my example portfolio and how to modify it
@@ -116,27 +105,19 @@ Este trabajo está bajo una licencia [Creative Commons Attribution-ShareAlike 4.
 
 > **NOTE:** Since the project is hosted on Render, the server may experience a cold start, so you must wait a moment for the CV to load or for the form to be sent.
 
----
-
 ### Creating a portfolio in React + Vite with Node.js
 
 #### Project summary
 
 The project is a **personal webpage** that contains several **cards** to display relevant information about you.
 
----
-
 #### Purpose
 
 The purpose is to create a template that can be downloaded and modified according to one's needs. Its main purpose is to expose your information and present yourself, although it can be used for different purposes.
 
----
-
 #### Target audience and benefits
 
 The goal is to facilitate the creation of a personal portfolio using this template. You also have other features available that benefit the user, such as a language-switching function, messaging service with Nodemailer (Gmail), the ability to customize SVG via props, and the ability to download the CV file.
-
----
 
 #### Tools used
 
@@ -171,16 +152,12 @@ The previous version had a critical vulnerability reported in **November 2025 (C
 **Solution:**  
 Updated to the **latest version of React** to fix the vulnerability and ensure security.
 
----
-
 #### Important changes in the project
 
 - **Multimedia Resources:** In the folder `cliente/src/assets` you will find multimedia assets such as the profile photo, favicon, and the animated name GIF. This effect can be created with code or with a GIF.
 - **Form Validation:** In the folder `cliente/src/utils`, the form validations have been implemented using Zod.
 - **Server Configuration:** In the `servidor` folder, an example `.env.example` file is included to configure the email, Brevo API, and to enable sending emails to the person who contacts us, including a copy for ourselves.
 - **Curriculum Download:** In the folder `servidor/public`, the PDF file containing the curriculum must be placed so it can be downloaded.
-
----
 
 #### PROJECT CUSTOMIZATION
 
@@ -200,6 +177,7 @@ Example:
 ```
 - In the cliente/static folder, you can edit the website texts. Use translationExample.js as a reference, then delete it and rename the new file so it takes effect.
 - In client/index.html, you can customize the site title by editing the <title> tag.
+---
 
 ## Data Processing (Privacy Policy)
 

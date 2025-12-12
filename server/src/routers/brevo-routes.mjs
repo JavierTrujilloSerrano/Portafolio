@@ -1,7 +1,13 @@
 import { Router } from "express";
-import brevo from "../../config/brevo.mjs";
+import brevo from "@getbrevo/brevo";
 
 export const brevoRouter = Router();
+
+const apiInstance = new brevo.TransactionalEmailsApi();
+apiInstance.setApiKey(
+  brevo.TransactionalEmailsApiApiKeys.apiKey,
+  process.env.BREVO_API_KEY
+);
 
 brevoRouter.post("/", async (req, res) => {
   const { name, email, message } = req.body;
@@ -21,7 +27,7 @@ brevoRouter.post("/", async (req, res) => {
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   try {
-    await brevo.sendTransacEmail({
+    await apiInstance.sendTransacEmail({
       sender: { name: process.env.USER, email: process.env.BREVO_EMAIL },
       to: [{ email: process.env.EMAIL }],
       replyTo: { email },
@@ -30,7 +36,7 @@ brevoRouter.post("/", async (req, res) => {
       <p>(${email}) dice: ${escapeHTML(message)}</p>`,
     });
 
-    await brevo.sendTransacEmail({
+    await apiInstance.sendTransacEmail({
       sender: { name: process.env.USER, email: process.env.BREVO_EMAIL },
       to: [{ email }],
       subject: `Formulario de contacto portafolio de ${process.env.USER} - Portfolio Contact Form of ${process.env.USER}`,

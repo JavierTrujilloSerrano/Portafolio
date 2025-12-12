@@ -45,7 +45,7 @@ export default function ContactSection() {
   const onSubmit = async (formData) => {
     try {
       const response = await axios.post(
-        'https://portafolio-server-kxrp.onrender.com/contact',
+        'https://portafolio-server-nb9i.onrender.com/contact',
         formData
       );
 
