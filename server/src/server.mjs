@@ -4,7 +4,10 @@ import { brevoRouter } from "./routers/brevo-routes.mjs";
 export const PORT = process.env.PORT || 4000;
 export const server = express();
 
-const allowedOrigins = "https://portafolio-yf9x.onrender.com";
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://portafolio-yf9x.onrender.com"
+];
 
 server.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -31,5 +34,4 @@ server.get("/", (req, res) => {
 });
 
 server.use("/contact", brevoRouter);
-
 server.use("/cv", express.static("public/javierTrujilloCV.pdf"));
